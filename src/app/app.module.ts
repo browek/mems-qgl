@@ -7,6 +7,7 @@ import { ContentComponent } from './content/content.component';
 import { SearchComponent } from './content/search/search.component';
 import { WallComponent } from './content/wall/wall.component';
 import { PostComponent } from './content/wall/post/post.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PostComponent } from './content/wall/post/post.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
