@@ -8,6 +8,7 @@ import { SearchComponent } from './content/search/search.component';
 import { WallComponent } from './content/wall/wall.component';
 import { PostComponent } from './content/wall/post/post.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedMatModule } from './shared/module/shared.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SharedMatModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
