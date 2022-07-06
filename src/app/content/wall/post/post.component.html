@@ -1,9 +1,9 @@
-<div class="post">
+<div class="post" *ngIf="post">
     <h3>
-        {{post?.title}}
+        {{post.title}}
     </h3>
-    <img [src]=post?.image?.url [alt]=post?.image?.alt>
-    <div class="tags" *ngFor="let tag of post?.tags">
+    <img [src]=post.image.url [alt]=post.image.alt>
+    <div class="tags" *ngFor="let tag of post.tags">
         {{tag}}
     </div>
 </div>

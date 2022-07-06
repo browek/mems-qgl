@@ -11,6 +11,7 @@ const query =`{
       url
       alt
     }
+    tags
     _firstPublishedAt
   }
   _allArticlesMeta {
