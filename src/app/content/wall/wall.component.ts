@@ -6,7 +6,6 @@ const query =`{
   allArticles {
     id
     title
-    tags
     image {
       url
       alt
