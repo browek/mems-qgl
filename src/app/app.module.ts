@@ -9,6 +9,8 @@ import { WallComponent } from './content/wall/wall.component';
 import { PostComponent } from './content/wall/post/post.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedMatModule } from './shared/module/shared.module';
+import { GraphQLModule } from './graphql.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { SharedMatModule } from './shared/module/shared.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedMatModule,
+    GraphQLModule,
+    HttpClientModule,
     
   ],
   providers: [],

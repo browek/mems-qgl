@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Post } from 'src/app/shared/model/post';
+import { Post } from 'src/app/shared/model/post.model';
 import { environment } from 'src/environments/environment';
+import { Apollo } from 'apollo-angular';
+import { allArticles } from 'src/app/shared/model/graphql.querry';
 
 const query =`{
   allArticles {
@@ -27,21 +29,21 @@ const query =`{
 
 export class WallComponent implements OnInit {
 
-  postsList: Array<Post> = []
+  postsList:any
+  loading = true;
+  error: any;
 
-  constructor() { }
+  constructor(private apollo: Apollo) { }
 
   ngOnInit(): void {
-    fetch('https://graphql.datocms.com/', {
-      method: 'POST',
-      headers: {'Authorization': `Bearer ${environment.DATO_READ_API}`},
-      body: JSON.stringify({query})
-    })
-    .then(res => res.json())
-    .then(({ data: { allArticles } }) => this.postsList.push(...allArticles) )
-    .catch(error => console.log(error))
-
-    console.log(this.postsList)
+    this.apollo
+      .watchQuery({query: allArticles})
+      .valueChanges.subscribe((res:any) => {
+        this.postsList = res?.data?.allArticles;
+        console.log(res)
+        this.loading = res.loading;
+        this.error = res.error;
+      })
   }
 
 }
