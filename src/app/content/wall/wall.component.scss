@@ -1,9 +1,17 @@
 .content {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
+    align-items: center;
+    // gap: 10px;
+    flex-direction: column;
+
 }
-// .post {
-//     display: flex;
+.post {
+    margin: 10px;
+    max-width: 600px;
+}
+// .content {
+//     display: grid;
+//     grid-template-columns: repeat(auto-fit, minmax(400px, auto));
+//     grid-gap: 10px;
+//     margin: 20px;
 // }
